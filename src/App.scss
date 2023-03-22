@@ -282,6 +282,11 @@ body {
         &:not(:last-child) {
             margin-right: 10px;
         }
+
+        &__clicked{
+            border-color: #AD61FF;
+            color: #AD61FF;
+        }
     }
 }
 
