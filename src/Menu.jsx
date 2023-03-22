@@ -2,33 +2,9 @@
 import { useState } from 'react'
 import logo from './img/logo.png'
 
-function NavMenu(props) {
-  return (
-    <div className="nav__menu menu">
-      <ul className="menu__list">
-        <li className="menu__item">
-          <a href="http://" className="menu__link">
-            Главное
-          </a>
-        </li>
-        <li className="menu__item">
-          <a href="http://" className="menu__link">
-            Мой плейлист
-          </a>
-        </li>
-        <li className="menu__item">
-          <a href="http://" className="menu__link">
-            Войти
-          </a>
-        </li>
-      </ul>
-    </div>
-  )
-}
-
 function Menu(props) {
   // Объявляем state, функцию для его изменения и изначальное значение
-  const [isVisible, setVisible] = useState(false);
+  const [isVisible, setVisible] = useState(false)
 
   return (
     <nav className="main__nav nav">
@@ -43,7 +19,27 @@ function Menu(props) {
         <span className="burger__line"></span>
         <span className="burger__line"></span>
       </div>
-      {isVisible && <NavMenu />}
+      {isVisible && (
+        <div className="nav__menu menu">
+          <ul className="menu__list">
+            <li className="menu__item">
+              <a href="http://" className="menu__link">
+                Главное
+              </a>
+            </li>
+            <li className="menu__item">
+              <a href="http://" className="menu__link">
+                Мой плейлист
+              </a>
+            </li>
+            <li className="menu__item">
+              <a href="http://" className="menu__link">
+                Войти
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   )
 }
