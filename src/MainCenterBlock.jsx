@@ -85,14 +85,14 @@ function FilterByGenre(props) {
 
 function Artists(props) {
   const artistsDivs = props.artists.map((element) => (
-    <div key={element} className="modal_artist">
+    <div key={element} className="modal_item">
       {element}
     </div>
   ))
   return (
-    <div className="modal_window_artist">
-      <div className="modal_window_artist_list">
-        {artistsDivs}
+    <div className="modal_window">
+      <div className="modal_window__shell">
+        <div className="modal_window_list">{artistsDivs}</div>
       </div>
     </div>
   )
@@ -100,14 +100,50 @@ function Artists(props) {
 
 function Genre(props) {
   const genreDivs = props.genre.map((element) => (
-    <div key={element} className="modal_genre">
+    <div key={element} className="modal_item">
       {element}
     </div>
   ))
   return (
-    <div className="modal_window_year">
-      <div className="modal_window_year_list">
-        {genreDivs}
+    <div className="modal_window">
+      <div className="modal_window__shell">
+        <div className="modal_window_list">{genreDivs}</div>
+      </div>
+    </div>
+  )
+}
+
+function Years(props) {
+  const yearsFilter = props.years.map((element) => (
+    <input type="radio" value={element} key={element} className="modal_years" />
+  ))
+  return (
+    <div className="modal_window">
+      <div className="modal_window__shell_year">
+        {/* <div className="modal_window_list">{yearsFilter}</div> */}
+        <div className="rowww">
+          <input
+            id="year-filter-new"
+            name="year-filter"
+            type="radio"
+            value="new"
+          />
+          <label className="filter__item-year" htmlFor="year-filter-new">
+            Более новые
+          </label>
+        </div>
+        <div className="row">
+          {' '}
+          <input
+            id="year-filter-old"
+            name="year-filter"
+            type="radio"
+            value="old"
+          />
+          <label className="filter__item-year" htmlFor="year-filter-old">
+            Более старые
+          </label>
+        </div>
       </div>
     </div>
   )
@@ -128,7 +164,7 @@ function MainCenterBlock() {
     <div className="main__centerblock centerblock">
       <div className="centerblock__search search">
         <svg className="search__svg">
-          <use xlinkHref="./img/icon/sprite.svg#icon-search" />
+          <use xlinkHref="img/icon/sprite.svg#icon-search" />
         </svg>
         <input
           className="search__text"
@@ -193,8 +229,8 @@ function MainCenterBlock() {
         </div>
       </div>
       {isOpenedArtists && <Artists artists={artists} />}
-      {isOpenedYear && <Genre genre={genre}/>}
-      {isOpenedGenre && <Genre genre={genre}/>}
+      {isOpenedYear && <Years years={years} />}
+      {isOpenedGenre && <Genre genre={genre} />}
       <div className="centerblock__content">
         <CenterBlock />
         <PlayListContent />

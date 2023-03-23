@@ -1,21 +1,22 @@
 import logo from './img/logo.png'
 import './App.css'
-import MainCenterBlock from './MainCenterBlock';
-import Menu from './Menu';
+import MainCenterBlock from './MainCenterBlock'
+import Menu from './Menu'
 
-import PlayerControls from './PlayerControls';
-import SideBarBlock from './SideBarBlock';
-import TrackPlayContain from './TrackPlayContain';
+import React, { useState, useEffect } from 'react'
+import PlayerControls from './PlayerControls'
+import SideBarBlock from './SideBarBlock'
+import TrackPlayContain from './TrackPlayContain'
 
 function MainElement(props) {
   return (
     <main className="main">
       <Menu/>
       <MainCenterBlock/>
-      
+
       <div className="main__sidebar sidebar">
         <div className="sidebar__personal">
-          <p className="sidebar__personal-name">Sergey.Ivanov</p>
+          <p className="sidebar__personal-name">Alina.Zakirova</p>
           <div className="sidebar__avatar"></div>
         </div>
         <SideBarBlock/>
@@ -29,7 +30,7 @@ function VolumeContent(props) {
     <div className="volume__content">
       <div className="volume__image">
         <svg className="volume__svg" alt="volume">
-          <use xlinkHref="./img/icon/sprite.svg#icon-volume"></use>
+          <use xlinkHref="img/icon/sprite.svg#icon-volume"></use>
         </svg>
       </div>
       <div className="volume__progress _btn">
@@ -75,7 +76,7 @@ function TrackPlayLikeDis(props) {
 function PlayerTrack(props) {
   return (
     <div className="player__track-play track-play">
-      <TrackPlayContain />
+      <TrackPlayContain/>
       <TrackPlayLikeDis />
     </div>
   )
