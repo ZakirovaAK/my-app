@@ -17,72 +17,6 @@ const artists = [
 const years = ['Более новые', 'Более старые']
 const genre = ['Рок', 'Хип-хоп', 'Техно', 'Инди']
 
-function FilterByAuthor(props) {
-  return (
-    <div
-      className={
-        isActiveButtonFilterArtists
-          ? '_btn-text-active button-author'
-          : 'filter__button button-author _btn-text'
-      }
-      onClick={() => {
-        setOpenedArtists(!isOpenedArtists)
-        setOpenedYear(false)
-        setOpenedGenre(false)
-        setActiveButtonFilterArtists(!isActiveButtonFilterArtists)
-        setActiveButtonFilterYear(false)
-        setActiveButtonFilterGenre(false)
-      }}
-    >
-      исполнителю
-    </div>
-  )
-}
-
-function FilterByYear(props) {
-  return (
-    <div
-      className={
-        isActiveButtonFilterYear
-          ? '_btn-text-active button-year'
-          : 'filter__button button-year _btn-text'
-      }
-      onClick={() => {
-        setOpenedYear(!isOpenedYear)
-        setOpenedArtists(false)
-        setOpenedGenre(false)
-        setActiveButtonFilterYear(!isActiveButtonFilterYear)
-        setActiveButtonFilterArtists(false)
-        setActiveButtonFilterGenre(false)
-      }}
-    >
-      году выпуска
-    </div>
-  )
-}
-
-function FilterByGenre(props) {
-  return (
-    <div
-      className={
-        isActiveButtonFilterGenre
-          ? '_btn-text-active button-genre'
-          : 'filter__button button-genre _btn-text'
-      }
-      onClick={() => {
-        setOpenedGenre(!isOpenedGenre)
-        setOpenedYear(false)
-        setOpenedArtists(false)
-        setActiveButtonFilterGenre(!isActiveButtonFilterGenre)
-        setActiveButtonFilterArtists(false)
-        setActiveButtonFilterYear(false)
-      }}
-    >
-      жанру
-    </div>
-  )
-}
-
 function Artists(props) {
   const artistsDivs = props.artists.map((element) => (
     <div key={element} className="modal_item">
@@ -114,14 +48,10 @@ function Genre(props) {
 }
 
 function Years(props) {
-  const yearsFilter = props.years.map((element) => (
-    <input type="radio" value={element} key={element} className="modal_years" />
-  ))
   return (
     <div className="modal_window">
       <div className="modal_window__shell_year">
-        {/* <div className="modal_window_list">{yearsFilter}</div> */}
-        <div className="rowww">
+        <div className="row">
           <input
             id="year-filter-new"
             name="year-filter"
@@ -151,14 +81,12 @@ function Years(props) {
 
 function MainCenterBlock() {
   // Объявляем state, функцию для его изменения и изначальное значение
-  const [isOpenedArtists, setOpenedArtists] = useState(false)
-  const [isOpenedYear, setOpenedYear] = useState(false)
-  const [isOpenedGenre, setOpenedGenre] = useState(false)
-  const [isActiveButtonFilterArtists, setActiveButtonFilterArtists] =
-    useState(false)
-  const [isActiveButtonFilterYear, setActiveButtonFilterYear] = useState(false)
-  const [isActiveButtonFilterGenre, setActiveButtonFilterGenre] =
-    useState(false)
+  const [openFilter, setOpenFilter] = useState(null)
+
+  function handleClick(newFilter){
+    setOpenFilter(newFilter);
+  }
+
 
   return (
     <div className="main__centerblock centerblock">
@@ -178,59 +106,44 @@ function MainCenterBlock() {
         <div className="filter__title">Искать по:</div>
         <div
           className={
-            isActiveButtonFilterArtists
+            openFilter === 'artist'
               ? '_btn-text-active button-author'
               : 'filter__button button-author _btn-text'
           }
           onClick={() => {
-            setOpenedArtists(!isOpenedArtists)
-            setOpenedYear(false)
-            setOpenedGenre(false)
-            setActiveButtonFilterArtists(!isActiveButtonFilterArtists)
-            setActiveButtonFilterYear(false)
-            setActiveButtonFilterGenre(false)
+            handleClick('artist');
           }}
         >
           исполнителю
         </div>
         <div
           className={
-            isActiveButtonFilterYear
+            openFilter === 'year'
               ? '_btn-text-active button-year'
               : 'filter__button button-year _btn-text'
           }
           onClick={() => {
-            setOpenedYear(!isOpenedYear)
-            setOpenedArtists(false)
-            setOpenedGenre(false)
-            setActiveButtonFilterYear(!isActiveButtonFilterYear)
-            setActiveButtonFilterArtists(false)
-            setActiveButtonFilterGenre(false)
+            handleClick('year');
           }}
         >
           году выпуска
         </div>
         <div
           className={
-            isActiveButtonFilterGenre
+            openFilter === 'genre'
               ? '_btn-text-active button-genre'
               : 'filter__button button-genre _btn-text'
           }
           onClick={() => {
-            setOpenedGenre(!isOpenedGenre)
-            setOpenedYear(false)
-            setOpenedArtists(false)
-            setActiveButtonFilterGenre(!isActiveButtonFilterGenre)
-            setActiveButtonFilterArtists(false)
-            setActiveButtonFilterYear(false)
+            handleClick('genre');
           }}
         >
           жанру
         </div>
       </div>
-      {isOpenedArtists && <Artists artists={artists} />}
-      {isOpenedYear && <Years years={years} />}
-      {isOpenedGenre && <Genre genre={genre} />}
+      {openFilter === 'artist' && <Artists artists={artists} />}
+      {openFilter === 'year' && <Years years={years} />}
+      {openFilter === 'genre' && <Genre genre={genre} />}
       <div className="centerblock__content">
         <CenterBlock />
         <PlayListContent />

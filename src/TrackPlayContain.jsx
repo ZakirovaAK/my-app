@@ -7,7 +7,7 @@ import SkeletonTitle from './skeletons/skeleton-title'
 function TrackPlayImg(props) {
   return (
     <div className="track-play__image-wrapper">
-      {props.isLoading === true ? (
+      {props.isLoading ? (
         <SkeletonImage />
       ) : (
         <div className="track-image">
@@ -23,7 +23,7 @@ function TrackPlayImg(props) {
 function TrackPlayAuth(props) {
   return (
     <div className="track-play__author">
-      {props.isLoading === true ? (
+      {props.isLoading ? (
         <SkeletonTitle />
       ) : (
         <a className="track-play__author-link" href="http://">
@@ -37,7 +37,7 @@ function TrackPlayAuth(props) {
 function TrackPlayAlbum(props) {
   return (
     <div className="track-play__album">
-      {props.isLoading === true ? (
+      {props.isLoading ? (
         <SkeletonTitle />
       ) : (
         <a className="track-play__album-link" href="http://">
