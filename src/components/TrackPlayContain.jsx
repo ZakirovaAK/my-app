@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import SkeletonImage from './skeletons/skeleton-img'
-import SkeletonTitle from './skeletons/skeleton-title'
+import SkeletonImage from '../skeletons/skeleton-img'
+import SkeletonTitle from '../skeletons/skeleton-title'
 
 // import img_note from 'img/icon/sprite.svg#icon-note'
 
