@@ -1,20 +1,22 @@
+import * as S from './player_controls__style'
+
 function PlayerControls(props) {
   return (
-    <div className="player__controls">
-      <div className="player__btn-prev">
-        <svg className="player__btn-prev-svg" alt="prev">
+    <S.PlayerControls>
+      <S.PlayerBtnPrev>
+        <S.PlayerBtnPrevSvg alt="prev">
           <use xlinkHref="#icon-prev"></use>
-        </svg>
-      </div>
-      <div className="player__btn-play _btn">
-        <svg className="player__btn-play-svg" alt="play">
+        </S.PlayerBtnPrevSvg>
+      </S.PlayerBtnPrev>
+      <S.PlayerBtnPlay>
+        <S.PlayerBtnPlaySvg alt="play">
           <use xlinkHref="img/icon/sprite.svg#icon-play"></use>
-        </svg>
-      </div>
+        </S.PlayerBtnPlaySvg>
+      </S.PlayerBtnPlay>
       <div className="player__btn-next">
-        <svg className="player__btn-next-svg" alt="next">
+        <S.PlayerBtnNextSvg alt="next">
           <use xlinkHref="img/icon/sprite.svg#icon-next"></use>
-        </svg>
+        </S.PlayerBtnNextSvg>
       </div>
       <div className="player__btn-repeat _btn-icon">
         <svg className="player__btn-repeat-svg" alt="repeat">
@@ -26,7 +28,7 @@ function PlayerControls(props) {
           <use xlinkHref="img/icon/sprite.svg#icon-shuffle"></use>
         </svg>
       </div>
-    </div>
+    </S.PlayerControls>
   )
 }
 

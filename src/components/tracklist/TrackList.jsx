@@ -4,6 +4,17 @@ import SkeletonTitle from '../../skeletons/skeleton-title'
 
 import * as S from './tracklist__style'
 
+function TrackTime(props) {
+  return (
+    <S.TrackTime>
+      <S.TrackTimeSvg alt="time">
+        <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
+      </S.TrackTimeSvg>
+      <S.TrackTimeText>{props.time}</S.TrackTimeText>
+    </S.TrackTime>
+  )
+}
+
 function PlayListItem(props) {
   return (
     <S.PlaylistItem>
@@ -37,26 +48,17 @@ function PlayListItem(props) {
           {props.isLoading === true ? (
             <SkeletonTitle />
           ) : (
-            <S.TrackAuthorLink href="http://">
-              {props.author}
-            </S.TrackAuthorLink>
+            <S.TrackAuthorLink href="http://">{props.author}</S.TrackAuthorLink>
           )}
         </S.TrackAuthor>
         <S.TrackAlbum>
           {props.isLoading === true ? (
             <SkeletonTitle />
           ) : (
-            <S.TrackAlbumLink href="http://">
-              {props.album}
-            </S.TrackAlbumLink>
+            <S.TrackAlbumLink href="http://">{props.album}</S.TrackAlbumLink>
           )}
         </S.TrackAlbum>
-        <div className="track__time">
-          <svg className="track__time-svg" alt="time">
-            <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-          </svg>
-          <span className="track__time-text">{props.time}</span>
-        </div>
+        <TrackTime />
       </S.PlaylistTrack>
     </S.PlaylistItem>
   )
@@ -74,7 +76,7 @@ function PlayListContent(props) {
   })
 
   return (
-    <div className="content__playlist playlist">
+    <S.ContentPlaylist>
       <PlayListItem
         isLoading={status}
         track="Guilt"
@@ -150,7 +152,7 @@ function PlayListContent(props) {
         time="3:36"
       />
       <PlayListItem isLoading={status} track="" author="" album="" time="" />
-    </div>
+    </S.ContentPlaylist>
   )
 }
 

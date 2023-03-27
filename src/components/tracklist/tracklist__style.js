@@ -83,3 +83,33 @@ export const TrackAlbumLink = styled.a`
   line-height: 24px;
   color: #696969;
 `
+export const ContentPlaylist = styled.div`
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+`
+
+export const TrackTime = styled.div`
+`;
+
+export const TrackTimeSvg = styled.svg`
+  width: 14px;
+  height: 12px;
+  margin-right: 17px;
+  fill: transparent;
+  stroke: #696969;
+`;
+
+export const TrackTimeText = styled.span`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #696969;
+`;

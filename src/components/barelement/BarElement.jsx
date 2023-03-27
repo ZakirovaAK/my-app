@@ -1,5 +1,5 @@
-import PlayerControls from '../PlayerControls'
-import TrackPlayContain from '../TrackPlayContain'
+import PlayerControls from './PlayerControls'
+import TrackPlayContain from './TrackPlayContain'
 
 import * as StyledVol from './player-volume__style'
 import * as StyledBar from './bar__style'
@@ -75,9 +75,11 @@ function BarContent(props) {
 }
 
 function BarElement(props) {
-  return <div className={props.barClassName}>
-    <BarContent></BarContent>
-  </div>
+  return (
+    <div className={props.barClassName}>
+      <BarContent></BarContent>
+    </div>
+  )
 }
 
 export default BarElement

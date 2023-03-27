@@ -1,55 +1,56 @@
 import React, { useState, useEffect } from 'react'
-import SkeletonImage from '../skeletons/skeleton-img'
-import SkeletonTitle from '../skeletons/skeleton-title'
+import SkeletonImage from '../../skeletons/skeleton-img'
+import SkeletonTitle from '../../skeletons/skeleton-title'
 
 // import img_note from 'img/icon/sprite.svg#icon-note'
+import * as S from './track_play_contain__style'
 
 function TrackPlayImg(props) {
   return (
-    <div className="track-play__image-wrapper">
+    <S.TrackPlayImgWrapper>
       {props.isLoading ? (
         <SkeletonImage />
       ) : (
-        <div className="track-image">
+        <S.TrackImg>
           <svg className="track-play__svg" aria-label="music">
             <use xlinkHref="./img/icon/sprite.svg#icon-note"></use>
           </svg>
-        </div>
+        </S.TrackImg>
       )}
-    </div>
+    </S.TrackPlayImgWrapper>
   )
 }
 
 function TrackPlayAuth(props) {
   return (
-    <div className="track-play__author">
+    <S.TrackPlayAuthor>
       {props.isLoading ? (
         <SkeletonTitle />
       ) : (
-        <a className="track-play__author-link" href="http://">
+        <S.TrackPlayAuthorLink href="http://">
           Ты та...
-        </a>
+        </S.TrackPlayAuthorLink>
       )}
-    </div>
+    </S.TrackPlayAuthor>
   )
 }
 
 function TrackPlayAlbum(props) {
   return (
-    <div className="track-play__album">
+    <S.TrackPlayAlbum>
       {props.isLoading ? (
         <SkeletonTitle />
       ) : (
-        <a className="track-play__album-link" href="http://">
+        <S.TrackPlayAlbumLink href="http://">
           Баста
-        </a>
+        </S.TrackPlayAlbumLink>
       )}
-    </div>
+    </S.TrackPlayAlbum>
   )
 }
 
 function TrackPlayContain(props) {
-  const [status, setStatus] = useState(true);
+  const [status, setStatus] = useState(true)
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       setStatus(false)
@@ -59,12 +60,12 @@ function TrackPlayContain(props) {
     }
   })
   return (
-    <div className="track-play__contain">
+    <S.TrackPlayContain>
       <TrackPlayImg isLoading={status} />
-      <TrackPlayAuth isLoading={status}/>
-      <TrackPlayAlbum isLoading={status}/>
-    </div>
-  );
-};
+      <TrackPlayAuth isLoading={status} />
+      <TrackPlayAlbum isLoading={status} />
+    </S.TrackPlayContain>
+  )
+}
 
 export default TrackPlayContain
