@@ -11,17 +11,6 @@ export const PlayerControls = styled.div`
   padding: 0 27px 0 31px;
 `
 
-export const PlayerBtnPrev = styled.div`
-  margin-right: 23px;
-  padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-`
-
 export const PlayerBtn = styled.div`
   padding: 5px;
   display: -webkit-box;
@@ -32,14 +21,17 @@ export const PlayerBtn = styled.div`
   align-items: center;
 `
 
-export const PlayerBtnPlay = styled.div`
-  padding: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+// Новый компонент на основе PlayerBtn, но с новыми стилями
+export const PlayerBtnPrev = styled(PlayerBtn)`
+  margin-right: 23px;
+`
+
+export const PlayerBtnPrevSvg = styled.svg`
+  width: 15px;
+  height: 14px;
+`
+
+export const PlayerBtnPlay = styled(PlayerBtn)`
   margin-right: 23px;
 `
 
@@ -49,9 +41,9 @@ export const PlayerBtnPlaySvg = styled.svg`
   fill: #d9d9d9;
 `
 
-export const PlayerBtnPrevSvg = styled.svg`
-  width: 15px;
-  height: 14px;
+export const PlayerBtnNext = styled(PlayerBtn)`
+  margin-right: 28px;
+  fill: #a53939;
 `
 
 export const PlayerBtnNextSvg = styled.svg`
@@ -59,4 +51,53 @@ export const PlayerBtnNextSvg = styled.svg`
   height: 14px;
   fill: inherit;
   stroke: #d9d9d9;
+`
+
+export const PlayerBtnRepeat = styled(PlayerBtn)`
+  margin-right: 24px;
+`
+
+export const PlayerBtnRepeatSvg = styled.svg`
+  width: 18px;
+  height: 12px;
+  fill: transparent;
+  stroke: #696969;
+
+  ${'' /* margin-right: 24px;
+  cursor: pointer;
+
+  :hover {
+    stroke: #cccccc;
+  }
+
+  :active {
+    stroke: #ffffff;
+  } */}
+`
+
+export const PlayerBtnShuffle = styled(PlayerBtn)`
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+`
+
+export const PlayerBtnShuffleSvg = styled.svg`
+  width: 19px;
+  height: 12px;
+  fill: transparent;
+  stroke: #696969;
+
+  ${'' /* margin-right: 24px;
+  cursor: pointer;
+
+  :hover {
+    stroke: #cccccc;
+  }
+
+  :active {
+    stroke: #ffffff;
+  } */}
 `
