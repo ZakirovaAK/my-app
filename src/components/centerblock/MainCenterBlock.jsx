@@ -4,6 +4,8 @@ import PlayListContent from '../tracklist/TrackList'
 
 import * as S from './main_center_block__style'
 
+import SvgImage from '../../svg/svg-image'
+
 const artists = [
   'Nero',
   'Dynoro',
@@ -26,11 +28,11 @@ function Artists(props) {
     </div>
   ))
   return (
-    <div className="modal_window">
-      <div className="modal_window__shell">
-        <div className="modal_window_list">{artistsDivs}</div>
-      </div>
-    </div>
+    <S.ModalWindow>
+      <S.ModalWindowShell>
+        <S.ModalWindowList>{artistsDivs}</S.ModalWindowList>
+      </S.ModalWindowShell>
+    </S.ModalWindow>
   )
 }
 
@@ -41,19 +43,19 @@ function Genre(props) {
     </div>
   ))
   return (
-    <div className="modal_window">
-      <div className="modal_window__shell">
-        <div className="modal_window_list">{genreDivs}</div>
-      </div>
-    </div>
+    <S.ModalWindow>
+      <S.ModalWindowShell>
+        <S.ModalWindowList>{genreDivs}</S.ModalWindowList>
+      </S.ModalWindowShell>
+    </S.ModalWindow>
   )
 }
 
 function Years(props) {
   return (
-    <div className="modal_window">
-      <div className="modal_window__shell_year">
-        <div className="row">
+    <S.ModalWindow>
+      <S.ModalWindowShellYear>
+        <S.Row>
           <input
             id="year-filter-new"
             name="year-filter"
@@ -63,8 +65,8 @@ function Years(props) {
           <label className="filter__item-year" htmlFor="year-filter-new">
             Более новые
           </label>
-        </div>
-        <div className="row">
+        </S.Row>
+        <S.Row>
           {' '}
           <input
             id="year-filter-old"
@@ -75,9 +77,9 @@ function Years(props) {
           <label className="filter__item-year" htmlFor="year-filter-old">
             Более старые
           </label>
-        </div>
-      </div>
-    </div>
+        </S.Row>
+      </S.ModalWindowShellYear>
+    </S.ModalWindow>
   )
 }
 
@@ -92,14 +94,13 @@ function MainCenterBlock() {
   return (
     <S.MainCenterBlock>
       <S.CenterBlockSearch>
-        <svg className="search__svg">
-          <use xlinkHref="img/icon/sprite.svg#icon-search" />
-        </svg>
-        <input
-          className="search__text"
-          type="search"
-          placeholder="Поиск"
-          name="search"
+        <S.SearchSVGWrapper>
+          <SvgImage href="img/icon/sprite.svg#icon-search" ariaLabel="search"/>
+        </S.SearchSVGWrapper>
+        <S.SearchInput
+                type="search"
+                placeholder="Поиск"
+                name="search"
         />
       </S.CenterBlockSearch>
       <S.CenterBlockH2>Треки</S.CenterBlockH2>
@@ -145,10 +146,10 @@ function MainCenterBlock() {
       {openFilter === 'artist' && <Artists artists={artists} />}
       {openFilter === 'year' && <Years years={years} />}
       {openFilter === 'genre' && <Genre genre={genre} />}
-      <div className="centerblock__content">
+      <S.CenterBlockContent>
         <CenterBlock />
         <PlayListContent />
-      </div>
+      </S.CenterBlockContent>
     </S.MainCenterBlock>
   )
 }

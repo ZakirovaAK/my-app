@@ -33,18 +33,6 @@
   cursor: pointer;
 }
 
-._btn-icon:active svg {
-  fill: transparent;
-  stroke: #ffffff;
-  cursor: pointer;
-}
-
-._btn-icon:active .track-play__like-svg,
-._btn-icon:active .track-play__dislike-svg {
-  fill: #696969;
-  stroke: #ffffff;
-  cursor: pointer;
-}
 
 .main__nav {
   width: 244px;
@@ -90,74 +78,6 @@
   background-color: #d3d3d3;
 }
 
-.centerblock__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.search__svg {
-  width: 17px;
-  height: 17px;
-  margin-right: 5px;
-  stroke: #ffffff;
-  fill: transparent;
-}
-
-.search__text {
-  -webkit-box-flex: 100;
-  -ms-flex-positive: 100;
-  flex-grow: 100;
-  background-color: transparent;
-  border: none;
-  padding: 13px 10px 14px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-}
-
-.search__text::-webkit-input-placeholder {
-  background-color: transparent;
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.search__text:-ms-input-placeholder {
-  background-color: transparent;
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.search__text::-ms-input-placeholder {
-  background-color: transparent;
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.search__text::placeholder {
-  background-color: transparent;
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-}
-
 .filter__button {
   font-style: normal;
   font-weight: 400;
@@ -190,13 +110,6 @@
   text-align: start;
 }
 */
-
-.track__title-svg {
-  width: 18px;
-  height: 17px;
-  fill: transparent;
-  stroke: #4e4e4e;
-}
 
 .track__title-link {
   font-style: normal;
@@ -237,8 +150,6 @@
   margin-bottom: 30px;
 }
 
-
-
 .player__controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -250,54 +161,11 @@
   padding: 0 27px 0 31px;
 }
 
-.player__track-play {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.track-play {
-
-  svg {
-    width: 18px;
-    height: 17px;
-    fill: transparent;
-    stroke: #4e4e4e;
-  }
-}
-
-.track-play__like-dis {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-left: 26%;
-}
-
-.track-play__like,
-.track-play__dislike {
-  padding: 5px;
-}
-
 .track-play__like-svg {
   width: 14px;
   height: 12px;
   fill: transparent;
   stroke: #696969;
-}
-
-.track-play__dislike {
-  margin-left: 28.5px;
 }
 
 .track-play__dislike-svg {
@@ -316,56 +184,6 @@
   display: none;
 }
 
-.modal_window_list {
-  max-height: 237px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 28px;
-
-  background: transparent;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 237px;
-
-    background: #4b4949;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    width: 4px;
-    height: 65px;
-
-    background: #ffffff;
-    border-radius: 10px;
-  }
-}
-
-.row {
-  width: 250px;
-}
-
-.modal_window {
-  width: 248px;
-  background-color: #313131;
-  height: 305px;
-  border-radius: 12px;
-  position: absolute;
-  left: 330px;
-  top: 258px;
-}
-
-.modal_window__shell {
-  padding: 20px;
-}
-
-.modal_window__shell_year {
-  padding: 20px;
-  display: flex;
-}
-
 .modal_item {
   max-width: 150px;
   font-style: normal;
@@ -382,17 +200,6 @@
   }
 }
 
-.modal_year {
-  color: #ffffff;
-}
-
-.modal_genre {
-  color: #ffffff;
-}
-
-.modal_active {
-  color: #b672ff;
-}
 
 .skeleton {
   background: #313131;

@@ -113,3 +113,13 @@ export const TrackTimeText = styled.span`
   text-align: right;
   color: #696969;
 `;
+
+export const TrackPlaySVGWrapper = styled.div`
+    width: 18px;
+    height: 17px;
+    fill: transparent;
+    stroke: #4e4e4e;
+`;
+
+export const TrackPlayTitleText = styled.div`
+`;

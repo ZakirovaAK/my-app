@@ -1,26 +1,28 @@
 import PlayerControls from './PlayerControls'
 import TrackPlayContain from './TrackPlayContain'
 
+import SvgImage from '../../svg/svg-image'
+
 import * as StyledVol from './player-volume__style'
 import * as StyledBar from './bar__style'
 
 function TrackPlayBtnLike(props) {
   return (
-    <div className="track-play__like _btn-icon">
-      <svg className="track-play__like-svg" alt="like">
-        <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-      </svg>
-    </div>
+    <StyledBar.TrackPlayLikeButton>
+      <StyledBar.TrackPlayLikeDisButtonSVGWrapper>
+        <SvgImage href="img/icon/sprite.svg#icon-like" ariaLabel="like" />
+      </StyledBar.TrackPlayLikeDisButtonSVGWrapper>
+    </StyledBar.TrackPlayLikeButton>
   )
 }
 
 function TrackPlayBtnDislike(props) {
   return (
-    <div className="track-play__dislike _btn-icon">
-      <svg className="track-play__dislike-svg" alt="dislike">
-        <use xlinkHref="img/icon/sprite.svg#icon-dislike"></use>
-      </svg>
-    </div>
+    <StyledBar.TrackPlayDisButton>
+      <StyledBar.TrackPlayLikeDisButtonSVGWrapper>
+        <SvgImage href="img/icon/sprite.svg#icon-dislike" ariaLabel="dislike" />
+      </StyledBar.TrackPlayLikeDisButtonSVGWrapper>
+    </StyledBar.TrackPlayDisButton>
   )
 }
 
@@ -43,19 +45,19 @@ function VolumeBlock(props) {
 
 function TrackPlayLikeDis(props) {
   return (
-    <div className="track-play__like-dis">
+    <StyledBar.TrackPlayLikeDis>
       <TrackPlayBtnLike />
       <TrackPlayBtnDislike />
-    </div>
+    </StyledBar.TrackPlayLikeDis>
   )
 }
 
 function PlayerTrack(props) {
   return (
-    <div className="player__track-play track-play">
+    <StyledBar.PlayerTrackPlay>
       <TrackPlayContain />
       <TrackPlayLikeDis />
-    </div>
+    </StyledBar.PlayerTrackPlay>
   )
 }
 
@@ -76,7 +78,7 @@ function BarContent(props) {
 
 function BarElement(props) {
   return (
-    <div className={props.barClassName}>
+    <div>
       <BarContent></BarContent>
     </div>
   )

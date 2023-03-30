@@ -30,7 +30,7 @@ function App() {
       <Wrapper>
         <Container>
           <MainElement mainClassName="main" />
-          <BarElement barClassName="bar" />
+          <BarElement />
           <Footer footerClassName="footer" />
         </Container>
       </Wrapper>
