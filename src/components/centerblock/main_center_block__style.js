@@ -114,7 +114,6 @@ export const SearchInput = styled.input`
     font-size: 16px;
     line-height: 24px;
   }
-
 `
 
 export const ModalWindow = styled.div`
@@ -128,10 +127,10 @@ export const ModalWindow = styled.div`
 `
 
 export const Row = styled.div`
-width: 250px;
+  width: 250px;
 `
 export const ModalWindowShell = styled.div`
-padding: 20px;
+  padding: 20px;
 `
 
 export const ModalWindowShellYear = styled(ModalWindowShell)`
@@ -165,5 +164,34 @@ export const ModalWindowList = styled.div`
   }
 `
 
-export const FilterYearLabel = styled.label`
-`;
+export const FilterYearLabel = styled.label``
+
+export const FilterButton = styled.div`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #ffffff;
+  border-radius: 60px;
+  padding: 6px 20px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+`
+
+export const ModalItem = styled.div`
+  max-width: 150px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover {
+    color: #b672ff;
+    text-decoration: underline #b672ff;
+  }
+`

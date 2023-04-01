@@ -10,7 +10,7 @@ function TrackTime(props) {
   return (
     <S.TrackTime>
       <S.TrackTimeSvg alt="time">
-        <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
+        <use xlinkHref={`img/icon/sprite.svg#icon-like`}></use>
       </S.TrackTimeSvg>
       <S.TrackTimeText>{props.time}</S.TrackTimeText>
     </S.TrackTime>
@@ -40,10 +40,10 @@ function PlayListItem(props) {
             {props.isLoading === true ? (
               <SkeletonTitle />
             ) : (
-              <a className="track__title-link" href="http://">
+              <S.TrackTitleLink href="http://">
                 {props.track}{' '}
-                <span className="track__title-span">{props.trackRemix}</span>
-              </a>
+                <S.TrackTitleSpan>{props.trackRemix}</S.TrackTitleSpan>
+              </S.TrackTitleLink>
             )}
           </div>
         </S.TrackTitle>

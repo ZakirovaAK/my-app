@@ -23,9 +23,9 @@ const genre = ['Рок', 'Хип-хоп', 'Техно', 'Инди']
 
 function Artists(props) {
   const artistsDivs = props.artists.map((element) => (
-    <div key={element} className="modal_item">
+    <S.ModalItem key={element}>
       {element}
-    </div>
+    </S.ModalItem>
   ))
   return (
     <S.ModalWindow>
@@ -38,9 +38,9 @@ function Artists(props) {
 
 function Genre(props) {
   const genreDivs = props.genre.map((element) => (
-    <div key={element} className="modal_item">
+    <S.ModalItem key={element}>
       {element}
-    </div>
+    </S.ModalItem>
   ))
   return (
     <S.ModalWindow>
@@ -95,13 +95,9 @@ function MainCenterBlock() {
     <S.MainCenterBlock>
       <S.CenterBlockSearch>
         <S.SearchSVGWrapper>
-          <SvgImage href="img/icon/sprite.svg#icon-search" ariaLabel="search"/>
+          <SvgImage href="img/icon/sprite.svg#icon-search" ariaLabel="search" />
         </S.SearchSVGWrapper>
-        <S.SearchInput
-                type="search"
-                placeholder="Поиск"
-                name="search"
-        />
+        <S.SearchInput type="search" placeholder="Поиск" name="search" />
       </S.CenterBlockSearch>
       <S.CenterBlockH2>Треки</S.CenterBlockH2>
       <S.CenterBlockFilter>

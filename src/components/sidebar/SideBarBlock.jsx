@@ -29,30 +29,6 @@ const SidebarListItem = ({ href, src, alt, isLoading }) => {
   )
 }
 
-// const SidebarListItem = ({ href, src, alt, isLoading }) => {
-//   return (
-//     <div
-//       className={
-//         isLoading === true
-//           ? 'sidebar__item sidebar__item_load'
-//           : 'sidebar__item'
-//       }
-//     >
-//       <a className="sidebar__link" href={href}>
-//         <img
-//           className={
-//             isLoading === true
-//               ? 'sidebar__img sidebar__img_load'
-//               : 'sidebar__img'
-//           }
-//           src={src}
-//           alt={alt}
-//         />
-//       </a>
-//     </div>
-//   )
-// }
-
 function SideBarBlock(props) {
   const [status, setStatus] = useState(true)
 

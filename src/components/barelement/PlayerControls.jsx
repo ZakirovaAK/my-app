@@ -2,11 +2,13 @@ import * as S from './player_controls__style'
 
 import SvgImage from '../../svg/svg-image'
 
+// import iconPrev from '../../img/icon/prev.svg' 
+
 function PlayerBtnPrev(params) {
   return (
     <S.PlayerBtnPrev>
       <S.PlayerBtnPrevSvg alt="prev">
-        <SvgImage href="/img/icon/sprite.svg#icon-prev" ariaLabel="prev" />
+        <SvgImage href={`/img/icon/sprite.svg#icon-prev`} ariaLabel="prev" />
       </S.PlayerBtnPrevSvg>
     </S.PlayerBtnPrev>
   )
@@ -22,7 +24,7 @@ function PlayerBtnPlay(params) {
   return (
     <S.PlayerBtnPlay>
       <S.PlayerBtnPlaySvg alt="play">
-        <SvgImage href="/img/icon/sprite.svg#icon-play" ariaLabel="play" />
+        <SvgImage href={`/img/icon/sprite.svg#icon-play`} ariaLabel="play" />
       </S.PlayerBtnPlaySvg>
     </S.PlayerBtnPlay>
   )

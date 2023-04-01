@@ -15,18 +15,15 @@ function Menu(props) {
   const [isVisible, setVisible] = useState(false)
 
   return (
-    <nav className="main__nav nav">
-      <div className="nav__logo logo">
-        <img className="logo__image" src={logo} alt="logo"></img>
-      </div>
-      <div
-        className="nav__burger burger"
-        onClick={() => setVisible(!isVisible)}
-      >
-        <span className="burger__line"></span>
-        <span className="burger__line"></span>
-        <span className="burger__line"></span>
-      </div>
+    <Styled.Nav>
+      <Styled.NavLogo>
+        <Styled.LogoImage src={logo} alt="logo"></Styled.LogoImage>
+      </Styled.NavLogo>
+      <Styled.NavBurger onClick={() => setVisible(!isVisible)}>
+        <Styled.BurgerLine></Styled.BurgerLine>
+        <Styled.BurgerLine></Styled.BurgerLine>
+        <Styled.BurgerLine></Styled.BurgerLine>
+      </Styled.NavBurger>
       {isVisible && (
         <Styled.Menu>
           <Styled.MenuList>
@@ -36,7 +33,7 @@ function Menu(props) {
           </Styled.MenuList>
         </Styled.Menu>
       )}
-    </nav>
+    </Styled.Nav>
   )
 }
 
