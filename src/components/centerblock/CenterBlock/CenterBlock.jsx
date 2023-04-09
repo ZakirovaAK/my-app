@@ -1,4 +1,5 @@
 import * as S from './center_block__style'
+import watch from '../../../img/icon/watch.svg'
 
 function CenterBlock(props) {
   return (
@@ -8,7 +9,7 @@ function CenterBlock(props) {
       <S.ContentTitleCol>АЛЬБОМ</S.ContentTitleCol>
       <S.ContentTitleCol>
         <S.PlaylistTitleSVG alt="time">
-          <use xlinkHref="img/icon/sprite.svg#icon-watch"></use>
+          <image href={watch} />
         </S.PlaylistTitleSVG>
       </S.ContentTitleCol>
     </S.ContentTitle>

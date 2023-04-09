@@ -4,13 +4,14 @@ import SkeletonTitle from '../../skeletons/skeleton-title'
 
 import * as S from './tracklist__style'
 
-import SvgImage from '../../svg/svg-image'
+import like from '../../img/icon/like.svg'
+import note from '../../img/icon/note.svg'
 
 function TrackTime(props) {
   return (
     <S.TrackTime>
       <S.TrackTimeSvg alt="time">
-        <use xlinkHref={`img/icon/sprite.svg#icon-like`}></use>
+        <image href={like} />
       </S.TrackTimeSvg>
       <S.TrackTimeText>{props.time}</S.TrackTimeText>
     </S.TrackTime>
@@ -28,10 +29,9 @@ function PlayListItem(props) {
             ) : (
               <S.TrackTitleImg>
                 <S.TrackPlaySVGWrapper>
-                  <SvgImage
-                    href="img/icon/sprite.svg#icon-note"
-                    ariaLabel="music"
-                  />
+                  <svg>
+                    <image href={note} />
+                  </svg>
                 </S.TrackPlaySVGWrapper>
               </S.TrackTitleImg>
             )}

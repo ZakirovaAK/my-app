@@ -5,6 +5,7 @@ const SvgImage = ({ href, ariaLabel }) => {
     return (
         <Styled.SVGImg aria-label={ariaLabel}>
             <use xlinkHref={href}></use>
+            {/* <image href={href} /> */}
         </Styled.SVGImg>
     );
 };

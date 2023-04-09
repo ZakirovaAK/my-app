@@ -1,16 +1,20 @@
 import PlayerControls from './PlayerControls'
 import TrackPlayContain from './TrackPlayContain'
 
-import SvgImage from '../../svg/svg-image'
-
 import * as StyledVol from './player-volume__style'
 import * as StyledBar from './bar__style'
+
+import like from '../../img/icon/like.svg'
+import dislike from '../../img/icon/dislike.svg'
+import volume from '../../img/icon/volume.svg'
 
 function TrackPlayBtnLike(props) {
   return (
     <StyledBar.TrackPlayLikeButton>
       <StyledBar.TrackPlayLikeDisButtonSVGWrapper>
-        <SvgImage href="img/icon/sprite.svg#icon-like" ariaLabel="like" />
+        <svg>
+          <image href={like} />
+        </svg>
       </StyledBar.TrackPlayLikeDisButtonSVGWrapper>
     </StyledBar.TrackPlayLikeButton>
   )
@@ -20,7 +24,9 @@ function TrackPlayBtnDislike(props) {
   return (
     <StyledBar.TrackPlayDisButton>
       <StyledBar.TrackPlayLikeDisButtonSVGWrapper>
-        <SvgImage href="img/icon/sprite.svg#icon-dislike" ariaLabel="dislike" />
+        <svg>
+          <image href={dislike} />
+        </svg>
       </StyledBar.TrackPlayLikeDisButtonSVGWrapper>
     </StyledBar.TrackPlayDisButton>
   )
@@ -32,7 +38,7 @@ function VolumeBlock(props) {
       <StyledVol.VolumeContent>
         <StyledVol.VolumeImage>
           <StyledVol.VolumeSVG ariaLabel="volume">
-            <use xlinkHref="img/icon/sprite.svg#icon-volume"></use>
+            <image href={volume} />
           </StyledVol.VolumeSVG>
         </StyledVol.VolumeImage>
         <StyledVol.VolumeProgress>

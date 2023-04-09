@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import SkeletonImage from '../../skeletons/skeleton-img'
 import SkeletonTitle from '../../skeletons/skeleton-title'
 
-// import img_note from 'img/icon/sprite.svg#icon-note'
+import note from '../../img/icon/note.svg' 
 import * as S from './track_play_contain__style'
 
 function TrackPlayImg(props) {
@@ -12,8 +12,8 @@ function TrackPlayImg(props) {
         <SkeletonImage />
       ) : (
         <S.TrackImg>
-          <svg className="track-play__svg" aria-label="music">
-            <use xlinkHref="./img/icon/sprite.svg#icon-note"></use>
+          <svg>
+            <image href={note} />
           </svg>
         </S.TrackImg>
       )}
