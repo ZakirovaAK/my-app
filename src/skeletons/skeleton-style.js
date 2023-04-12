@@ -6,8 +6,11 @@ export const Skeleton = styled.div`
   height: 19px;
 `
 
-export const SkeletonImage = styled(Skeleton)`
+export const SkeletonImage = styled.div`
+  background: #313131;
   background-color: #313131;
   width: 51px;
   height: 51px;
 `
+
+// styled(Skeleton)

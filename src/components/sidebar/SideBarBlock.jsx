@@ -5,6 +5,7 @@ import playlist03 from '../../img/playlist03.png'
 
 import * as Styled from './sidebar_block__style'
 import * as Skeleton from '../skeleton/skeleton__style'
+// import SkeletonImage from '../../skeletons/skeleton-img'
 
 const SidebarListItem = ({ href, src, alt, isLoading }) => {
   return (
@@ -44,24 +45,35 @@ function SideBarBlock(props) {
   return (
     <Styled.SidebarBlock>
       <Styled.SidebarList>
-        <SidebarListItem
+        {status ? (
+          <>
+            {Array.from({ length: 3 }).map((i, index) => (
+              <Skeleton.SceletonSidebarItem  key={index} />
+            ))}
+          </>
+        ) : (
+          <>
+          <SidebarListItem
           href="#"
           src={playlist01}
           alt="day's playlist"
-          isLoading={status}
+          // isLoading={status}
         />
         <SidebarListItem
           href="#"
           src={playlist02}
           alt="100th hits"
-          isLoading={status}
+          // isLoading={status}
         />
         <SidebarListItem
           href="#"
           src={playlist03}
           alt="Indi charge"
-          isLoading={status}
+          // isLoading={status}
         />
+          </>
+        )}
+        
       </Styled.SidebarList>
     </Styled.SidebarBlock>
   )
