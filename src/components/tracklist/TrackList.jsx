@@ -1,62 +1,69 @@
 import React, { useEffect, useState } from 'react'
-import SkeletonImage from './skeletons/skeleton-img'
-import SkeletonTitle from './skeletons/skeleton-title'
+import SkeletonImage from '../../skeletons/skeleton-img'
+import SkeletonTitle from '../../skeletons/skeleton-title'
+
+import * as S from './tracklist__style'
+
+import like from '../../img/icon/like.svg'
+import note from '../../img/icon/note.svg'
+
+function TrackTime(props) {
+  return (
+    <S.TrackTime>
+      <S.TrackTimeSvg alt="time">
+        <image href={like} />
+      </S.TrackTimeSvg>
+      <S.TrackTimeText>{props.time}</S.TrackTimeText>
+    </S.TrackTime>
+  )
+}
 
 function PlayListItem(props) {
   return (
-    <div className="playlist__item">
-      <div className="playlist__track track">
-        <div className="track__title">
-          <div className="track__title-image">
+    <S.PlaylistItem>
+      <S.PlaylistTrack>
+        <S.TrackTitle>
+          <S.TrackTitleImg>
             {props.isLoading === true ? (
               <SkeletonImage />
             ) : (
-              <div className="track__title-image">
-                <div className="track__title-svg">
-                  <svg className="track__title-svg" alt="music">
-                    <use xlinkHref="img/icon/sprite.svg#icon-note"></use>
+              <S.TrackTitleImg>
+                <S.TrackPlaySVGWrapper>
+                  <svg>
+                    <image href={note} />
                   </svg>
-                </div>
-              </div>
+                </S.TrackPlaySVGWrapper>
+              </S.TrackTitleImg>
             )}
-          </div>
+          </S.TrackTitleImg>
           <div className="track__title-text">
             {props.isLoading === true ? (
               <SkeletonTitle />
             ) : (
-              <a className="track__title-link" href="http://">
+              <S.TrackTitleLink href="http://">
                 {props.track}{' '}
-                <span className="track__title-span">{props.trackRemix}</span>
-              </a>
+                <S.TrackTitleSpan>{props.trackRemix}</S.TrackTitleSpan>
+              </S.TrackTitleLink>
             )}
           </div>
-        </div>
-        <div className="track__author">
+        </S.TrackTitle>
+        <S.TrackAuthor>
           {props.isLoading === true ? (
             <SkeletonTitle />
           ) : (
-            <a className="track__author-link" href="http://">
-              {props.author}
-            </a>
+            <S.TrackAuthorLink href="http://">{props.author}</S.TrackAuthorLink>
           )}
-        </div>
-        <div className="track__album">
+        </S.TrackAuthor>
+        <S.TrackAlbum>
           {props.isLoading === true ? (
             <SkeletonTitle />
           ) : (
-            <a className="track__album-link" href="http://">
-              {props.album}
-            </a>
+            <S.TrackAlbumLink href="http://">{props.album}</S.TrackAlbumLink>
           )}
-        </div>
-        <div className="track__time">
-          <svg className="track__time-svg" alt="time">
-            <use xlinkHref="img/icon/sprite.svg#icon-like"></use>
-          </svg>
-          <span className="track__time-text">{props.time}</span>
-        </div>
-      </div>
-    </div>
+        </S.TrackAlbum>
+        <TrackTime />
+      </S.PlaylistTrack>
+    </S.PlaylistItem>
   )
 }
 
@@ -72,7 +79,7 @@ function PlayListContent(props) {
   })
 
   return (
-    <div className="content__playlist playlist">
+    <S.ContentPlaylist>
       <PlayListItem
         isLoading={status}
         track="Guilt"
@@ -148,7 +155,7 @@ function PlayListContent(props) {
         time="3:36"
       />
       <PlayListItem isLoading={status} track="" author="" album="" time="" />
-    </div>
+    </S.ContentPlaylist>
   )
 }
 

@@ -1,7 +1,9 @@
 import React from 'react';
 
+import * as Styled from './skeleton-style'
+
 const SkeletonImage = () => {
-	return <div className="skeleton skeleton__img"></div>;
+	return <Styled.SkeletonImage></Styled.SkeletonImage>;
 };
 
 export default SkeletonImage;

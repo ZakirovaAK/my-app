@@ -1,7 +1,9 @@
 import React from 'react';
 
+import * as Styled from './skeleton-style'
+
 const SkeletonTitle = () => {
-	return <div className="skeleton"></div>;
+	return <Styled.Skeleton></Styled.Skeleton>;
 };
 
 export default SkeletonTitle;
