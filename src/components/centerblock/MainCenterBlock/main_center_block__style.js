@@ -56,65 +56,6 @@ export const FilterTitle = styled.div`
   margin-right: 15px;
 `
 
-export const CenterBlockContent = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-`
-export const SearchSVGWrapper = styled.div`
-  width: 17px;
-  height: 17px;
-  margin-right: 5px;
-  stroke: #ffffff;
-  fill: transparent;
-`
-
-export const SearchInput = styled.input`
-  ${'' /* outline: none; */}
-
-  -webkit-box-flex: 100;
-  -ms-flex-positive: 100;
-  flex-grow: 100;
-  background-color: transparent;
-  border: none;
-  padding: 13px 10px 14px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-
-  &::placeholder {
-    background-color: transparent;
-    color: #ffffff;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  &::-webkit-input-placeholder {
-    background-color: transparent;
-    color: #ffffff;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  &::-ms-input-placeholder {
-    background-color: transparent;
-    color: #ffffff;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
-`
 
 export const ModalWindow = styled.div`
   width: 248px;
