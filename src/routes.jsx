@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Main from './pages/main/main'
 import NotFound from './pages/not-found/not-found'
-import PlayList from './pages/playlist/index'
 import PersonalPlaylist from './pages/personal-playlist/personal-playlist';
 import RegistrationPage from './pages/registration/reg';
 import LoginPage from './pages/login/login';

@@ -3,11 +3,11 @@ import PlayListContent from '../../tracklist/TrackList'
 
 import * as S from './content__style'
 
-function CenterBlockContent(props) {
+function CenterBlockContent({playlist}) {
     return (
       <S.CenterBlockContent>
         <CenterBlock />
-        <PlayListContent playlist={props.trackDataList} />
+        <PlayListContent playlist={playlist} />
       </S.CenterBlockContent>
     )
   }

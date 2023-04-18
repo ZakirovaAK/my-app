@@ -1,6 +1,3 @@
-// import Navigation from '../../components/main/navigation/navigation'
-// import { CustomPlaylists } from '../../mocks/custom-playlist'
-
 import React from 'react'
 import * as Styled from '../main/main.style'
 
@@ -29,7 +26,7 @@ const CustomPlaylist = () => {
           <S.MainCenterBlock>
             <SearchBlock />
             <S.CenterBlockH2>{currenPlaylist[0].title}</S.CenterBlockH2>
-            <CenterBlockContent trackDataList={currenPlaylist} />
+            <CenterBlockContent playlist={currenPlaylist} />
           </S.MainCenterBlock>
           <SideBar />
         </Styled.Main>
@@ -37,16 +34,6 @@ const CustomPlaylist = () => {
         <Footer footerClassName="footer" />
       </Styled.Container>
     </Styled.Wrapper>
-    // <Styled.Main>
-    //     <Navigation />
-    //     <CenterBlock >
-    //         <Search />
-    //         <CenterBlockTitle >{currenPlaylist[0].title}</CenterBlockTitle>
-    //         <Content playlist={currenPlaylist} />
-    //     </CenterBlock>
-    //     <Sidebar />
-    //     <Bar />
-    // </Styled.Main>
   )
 }
 

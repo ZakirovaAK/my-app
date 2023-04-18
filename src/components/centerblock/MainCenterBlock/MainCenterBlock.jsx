@@ -57,7 +57,7 @@ function MainCenterBlock() {
       <SearchBlock />
       <S.CenterBlockH2>Треки</S.CenterBlockH2>
       <Filter tracks={tracks} />
-      <CenterBlockContent trackDataList={trackDataList}/>
+      <CenterBlockContent playlist={trackDataList}/>
     </S.MainCenterBlock>
   )
 }

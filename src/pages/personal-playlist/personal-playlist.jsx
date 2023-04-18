@@ -1,10 +1,6 @@
 import React from 'react'
 import * as Styled from '../main/main.style'
 
-// import Navigation from '../../components/main/navigation/navigation'
-// import { PersonalPlaylistItems } from '../../mocks/personal-playlist'
-
-
 import BarElement from '../../components/barelement/BarElement'
 import Footer from '../../components/footer/Footer'
 import Menu from '../../components/menu/Menu'
@@ -25,7 +21,7 @@ const PersonalPlaylist = () => {
           <S.MainCenterBlock>
             <SearchBlock />
             <S.CenterBlockH2>Мой плейлист</S.CenterBlockH2>
-            <CenterBlockContent trackDataList={PersonalPlaylistItems} />
+            <CenterBlockContent playlist={PersonalPlaylistItems} />
           </S.MainCenterBlock>
           <SideBar />
         </Styled.Main>
@@ -34,19 +30,6 @@ const PersonalPlaylist = () => {
       </Styled.Container>
     </Styled.Wrapper>
   )
-
-  // return (
-  //     <Styled.Main>
-  //         <Navigation />
-  //         <CenterBlock >
-  //             <Search />
-  //             <CenterBlockTitle >Мой плейлист</CenterBlockTitle>
-  //             <Content playlist={PersonalPlaylistItems}/>
-  //         </CenterBlock>
-  //         <Sidebar />
-  //         <Bar />
-  //     </Styled.Main>
-  // );
 }
 
 export default PersonalPlaylist

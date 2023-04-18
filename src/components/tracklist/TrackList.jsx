@@ -67,7 +67,7 @@ function PlayListItem(props) {
   )
 }
 
-function PlayListContent(props) {
+function PlayListContent({playlist}) {
   const [status, setStatus] = useState(true)
   useEffect(() => {
     const loadTimer = setTimeout(() => {
@@ -78,9 +78,13 @@ function PlayListContent(props) {
     }
   })
 
+  // playlist[0].tracks.map((track) => (
+  //   console.log(track, 'track')
+  // ))
+
   return (
     <S.ContentPlaylist>
-      {props.tracks.map((track) => (
+      {playlist[0].tracks.map((track) => (
         <PlayListItem
           key={track.trackTitleText}
           track={track.trackTitleLink}

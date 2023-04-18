@@ -7,7 +7,8 @@ import { AppRoutes } from './routes'
 function App() {
   return (
     <>
-      <AppRoutes />
+      {/* <AppRoutes /> */}
+      <AppRoutes isLogin={true} /> {/*// заглушка для входа*/}
       <GlobalStyle />
       {/* <Wrapper>
         <Container>
