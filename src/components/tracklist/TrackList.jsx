@@ -10,10 +10,16 @@ import note from '../../img/icon/note.svg'
 function TrackTime(props) {
   return (
     <S.TrackTime>
-      <S.TrackTimeSvg alt="time">
+      <S.TrackTimeSvg>
         <image href={like} />
       </S.TrackTimeSvg>
-      <S.TrackTimeText>{props.time}</S.TrackTimeText>
+      <S.TrackTimeText>
+        {props.isLoading === true ? (
+          <SkeletonTitle />
+        ) : (
+          <S.TrackAlbumLink>{props.time}</S.TrackAlbumLink>
+        )}
+      </S.TrackTimeText>
     </S.TrackTime>
   )
 }
@@ -61,13 +67,13 @@ function PlayListItem(props) {
             <S.TrackAlbumLink href="http://">{props.album}</S.TrackAlbumLink>
           )}
         </S.TrackAlbum>
-        <TrackTime />
+        <TrackTime time={props.time} isLoading={props.isLoading}/>
       </S.PlaylistTrack>
     </S.PlaylistItem>
   )
 }
 
-function PlayListContent({playlist}) {
+function PlayListContent({ playlist }) {
   const [status, setStatus] = useState(true)
   useEffect(() => {
     const loadTimer = setTimeout(() => {
@@ -78,16 +84,12 @@ function PlayListContent({playlist}) {
     }
   })
 
-  // playlist[0].tracks.map((track) => (
-  //   console.log(track, 'track')
-  // ))
-
   return (
     <S.ContentPlaylist>
       {playlist[0].tracks.map((track) => (
         <PlayListItem
           key={track.trackTitleText}
-          track={track.trackTitleLink}
+          track={track.trackTitleText}
           author={track.trackAuthorText}
           album={track.trackAlbumText}
           time={track.trackTime}
