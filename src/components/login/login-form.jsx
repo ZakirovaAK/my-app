@@ -7,7 +7,9 @@ import logo_black from '../../img/logo-black.png'
 const LoginForm = () => {
     const MyLogin = (e) => {
         e.preventDefault();
-        localStorage.setItem('token', 'It is me, Alina');
+        // localStorage.setItem('token', 'It is me, Alina');
+        localStorage.setItem('login', 'Alina');
+        localStorage.setItem('password', 'password');
         window.location.reload(); //временно для входа
     };
 
