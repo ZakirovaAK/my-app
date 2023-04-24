@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getAllTracks } from '../../../API/API'
-import CenterBlock from '../CenterBlock/CenterBlock'
 import FilterItem from '../Filter/FilterItem'
+import CenterBlockContent from '../Content/Content'
+import SearchBlock from '../Search/Search'
 
-import PlayListContent from '../../tracklist/TrackList'
-import search from '../../../img/icon/search.svg'
+import { trackDataList } from '../../../mocks/track-data';
 
 import * as S from './main_center_block__style'
 
@@ -54,22 +54,13 @@ function MainCenterBlock() {
 
   return (
     <S.MainCenterBlock>
-      <S.CenterBlockSearch>
-        <S.SearchSVGWrapper>
-          <svg>
-            <image href={search} />
-          </svg>
-        </S.SearchSVGWrapper>
-        <S.SearchInput type="search" placeholder="Поиск" name="search" />
-      </S.CenterBlockSearch>
+      <SearchBlock />
       <S.CenterBlockH2>Треки</S.CenterBlockH2>
       <Filter tracks={tracks} />
-      <S.CenterBlockContent>
-        <CenterBlock />
-        <PlayListContent />
-      </S.CenterBlockContent>
+      <CenterBlockContent playlist={trackDataList}/>
     </S.MainCenterBlock>
   )
 }
 
-export default MainCenterBlock
+
+export default MainCenterBlock;

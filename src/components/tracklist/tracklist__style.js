@@ -91,11 +91,15 @@ export const ContentPlaylist = styled.div`
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow-y: auto;
+  ${'' /* overflow-y: auto; */}
 `
 
-export const TrackTime = styled.div`
-`;
+export const TrackTime = styled.div``
+
+export const TrackTimeLink = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 export const TrackTimeSvg = styled.svg`
   width: 14px;
@@ -103,7 +107,7 @@ export const TrackTimeSvg = styled.svg`
   margin-right: 17px;
   fill: transparent;
   stroke: #696969;
-`;
+`
 
 export const TrackTimeText = styled.span`
   font-style: normal;
@@ -112,17 +116,16 @@ export const TrackTimeText = styled.span`
   line-height: 24px;
   text-align: right;
   color: #696969;
-`;
+`
 
 export const TrackPlaySVGWrapper = styled.div`
-    width: 18px;
-    height: 17px;
-    fill: transparent;
-    stroke: #4e4e4e;
-`;
+  width: 18px;
+  height: 17px;
+  fill: transparent;
+  stroke: #4e4e4e;
+`
 
-export const TrackPlayTitleText = styled.div`
-`;
+export const TrackPlayTitleText = styled.div``
 
 export const TrackTitleLink = styled.a`
   font-style: normal;
