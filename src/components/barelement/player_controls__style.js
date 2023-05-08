@@ -9,14 +9,12 @@ const MainTextMixin = css`
 `
 
 export const PlayerControls = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 250px;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0 27px 0 31px;
+  padding: 0px 27px 0px 31px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 `
 
 export const PlayerBtn = styled.div`
