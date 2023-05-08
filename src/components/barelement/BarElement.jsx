@@ -85,7 +85,16 @@ function BarContent(props) {
 function BarElement(props) {
   return (
     <div>
-      <BarContent></BarContent>
+      <StyledBar.BarContent>
+        <StyledBar.BarPlayerProgress></StyledBar.BarPlayerProgress>
+        <StyledBar.BarPlayerBlock>
+          <StyledBar.BarPlayer>
+            <PlayerControls />
+            <PlayerTrack />
+          </StyledBar.BarPlayer>
+          <VolumeBlock />
+        </StyledBar.BarPlayerBlock>
+      </StyledBar.BarContent>
     </div>
   )
 }

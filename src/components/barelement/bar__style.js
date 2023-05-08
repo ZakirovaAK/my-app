@@ -114,3 +114,7 @@ export const PlayerTrackPlay = styled.div`
   -ms-flex-direction: row;
   flex-direction: row;
 `
+
+export const Audio = styled.audio`
+    display: none;
+`
