@@ -14,18 +14,4 @@ const Player = forwardRef(function Player(props, ref) {
     )
   })
 
-// const Player = () => {
-//   const [isPlaying, setIsPlaying] = useState(false);
-
-//   return (
-//     <S.BarPlayer>
-//       <PlayerControls
-//         isPlaying={isPlaying}
-//         onTogglePlay={() => onTogglePlay()}
-//       />
-//       <PlayerTrack />
-//     </S.BarPlayer>
-//   )
-// }
-
 export default Player
