@@ -1,4 +1,4 @@
-import styled, { css, createGlobalStyle } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const MainTextMixin = css`
     font-style: normal;

@@ -12,8 +12,8 @@ export const TrackPlayImgWrapper = styled.div`
 `
 
 export const TrackImg = styled.div`
-  width: 51px;
-  height: 51px;
+  width: 17px;
+  height: 17px;
   background-color: #313131;
 `
 

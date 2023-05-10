@@ -36,7 +36,7 @@ function SideBarBlock(props) {
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       setStatus(false)
-    }, 5000)
+    }, 2000)
     return () => {
       clearTimeout(loadTimer)
     }
@@ -54,22 +54,19 @@ function SideBarBlock(props) {
         ) : (
           <>
           <SidebarListItem
-          href="#"
+          href="/playlist/1"
           src={playlist01}
           alt="day's playlist"
-          // isLoading={status}
         />
         <SidebarListItem
-          href="#"
+          href="/playlist/2"
           src={playlist02}
           alt="100th hits"
-          // isLoading={status}
         />
         <SidebarListItem
-          href="#"
+          href="/playlist/3"
           src={playlist03}
           alt="Indi charge"
-          // isLoading={status}
         />
           </>
         )}

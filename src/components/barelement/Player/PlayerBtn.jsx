@@ -1,24 +1,13 @@
-import React, { forwardRef, useState } from 'react'
+import React from 'react'
 import * as S from '../player_controls__style'
+import sprite from '../../../img/icon/sprite.svg'
 
-const PlayerBtn = forwardRef(function PlayerBtn({ type }, ref) {
-  const [btnType, setBtnType] = useState(type)
-  const handleClick = () => {
-    if (btnType === 'play') {
-      setBtnType('pause')
-      ref.current.play()
-    }
-
-    if (btnType === 'pause') {
-      setBtnType('play')
-      ref.current.pause()
-    }
-  }
+const PlayerBtn = ({ type , clickFunction }) => {
   return (
-    <S.PlayerBtnSvg alt={btnType} onClick={() => handleClick()}>
-        <use xlinkHref={`/img/icon/sprite.svg#icon-${btnType}`}></use>
+    <S.PlayerBtnSvg alt={type} onClick={clickFunction}>
+        <use xlinkHref={`${sprite}#icon-${type}`}></use>
     </S.PlayerBtnSvg>
   )
-})
+}
 
 export default PlayerBtn

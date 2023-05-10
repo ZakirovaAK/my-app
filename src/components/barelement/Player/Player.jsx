@@ -1,4 +1,4 @@
-// import PlayerControls from '../Player/PlayerControls'
+//import PlayerControls from '../Player/PlayerControls'
 import PlayerControls from './PlayerControls'
 import PlayerTrack from './PlayerTrack'
 import * as S from '../bar__style'

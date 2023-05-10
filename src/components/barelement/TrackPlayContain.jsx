@@ -28,7 +28,7 @@ function TrackPlayAuth(props) {
         <SkeletonTitle />
       ) : (
         <S.TrackPlayAuthorLink href="http://">
-          Ты та...
+          Dropin
         </S.TrackPlayAuthorLink>
       )}
     </S.TrackPlayAuthor>
@@ -42,7 +42,7 @@ function TrackPlayAlbum(props) {
         <SkeletonTitle />
       ) : (
         <S.TrackPlayAlbumLink href="http://">
-          Баста
+          Bobby Marleni
         </S.TrackPlayAlbumLink>
       )}
     </S.TrackPlayAlbum>
@@ -54,7 +54,7 @@ function TrackPlayContain(props) {
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       setStatus(false)
-    }, 5000)
+    }, 2000)
     return () => {
       clearTimeout(loadTimer)
     }
