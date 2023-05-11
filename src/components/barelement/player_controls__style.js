@@ -1,14 +1,20 @@
-import styled from 'styled-components'
+import styled , { css } from 'styled-components'
+
+const MainTextMixin = css`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+`
 
 export const PlayerControls = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 250px;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0 27px 0 31px;
+  padding: 0px 27px 0px 31px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 `
 
 export const PlayerBtn = styled.div`
@@ -100,4 +106,68 @@ export const PlayerBtnShuffleSvg = styled.svg`
   :active {
     stroke: #ffffff;
   } */}
+`
+
+export const PlayerBtnSvg = styled.svg`
+    ${'' /* ${HoverMixin} */}
+    width: 15px;
+    height: 14px;
+    stroke: #d9d9d9;
+`
+
+export const BarPlayerText = styled.p`
+    ${MainTextMixin}
+    color: #696969;
+    line-height: 16px;
+    text-align: end;
+    padding-top: 10px;
+    padding-right: 10px;
+`
+export const BarPlayerProgress = styled.input`
+    height: 5px;
+    width: 100%;
+    background: #797979;
+    background-image: linear-gradient(#b672ff, #b672ff);
+    background-size: ${(props) => props.$range}% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    outline: none;
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #b672ff;
+        cursor: pointer;
+    }
+    &::-moz-range-thumb {
+        -webkit-appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: #b672ff;
+        transition: background 0.3s ease-in-out;
+    }
+    ::-moz-range-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #ff4500;
+        cursor: ew-resize;
+        box-shadow: 0 0 2px 0 #555;
+        transition: background 0.3s ease-in-out;
+    }
+    ::-ms-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #ff4500;
+        cursor: ew-resize;
+        box-shadow: 0 0 2px 0 #555;
+        transition: background 0.3s ease-in-out;
+    }
 `

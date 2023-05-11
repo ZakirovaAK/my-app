@@ -78,7 +78,7 @@ function PlayListContent({ playlist }) {
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       setStatus(false)
-    }, 5000)
+    }, 2000)
     return () => {
       clearTimeout(loadTimer)
     }

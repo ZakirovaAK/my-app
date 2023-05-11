@@ -1,4 +1,4 @@
-import PlayerControls from './PlayerControls'
+import PlayerControls from './Player/PlayerControls'
 import TrackPlayContain from './TrackPlayContain'
 
 import * as StyledVol from './player-volume__style'
@@ -67,25 +67,19 @@ function PlayerTrack(props) {
   )
 }
 
-function BarContent(props) {
-  return (
-    <StyledBar.BarContent>
-      <StyledBar.BarPlayerProgress></StyledBar.BarPlayerProgress>
-      <StyledBar.BarPlayerBlock>
-        <StyledBar.BarPlayer>
-          <PlayerControls />
-          <PlayerTrack />
-        </StyledBar.BarPlayer>
-        <VolumeBlock />
-      </StyledBar.BarPlayerBlock>
-    </StyledBar.BarContent>
-  )
-}
-
 function BarElement(props) {
   return (
     <div>
-      <BarContent></BarContent>
+      <StyledBar.BarContent>
+        <StyledBar.BarPlayerProgress></StyledBar.BarPlayerProgress>
+        <StyledBar.BarPlayerBlock>
+          <StyledBar.BarPlayer>
+            <PlayerControls />
+            <PlayerTrack />
+          </StyledBar.BarPlayer>
+          <VolumeBlock />
+        </StyledBar.BarPlayerBlock>
+      </StyledBar.BarContent>
     </div>
   )
 }
