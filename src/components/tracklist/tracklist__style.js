@@ -40,7 +40,7 @@ export const TrackTitleImg = styled.div`
   width: 51px;
   height: 51px;
   padding: 16px;
-  background: #313131;
+  background: ${(props) => props.theme.additionalColor};
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,7 +68,7 @@ export const TrackAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.supportiveColor};
   text-align: left;
 `
 
@@ -122,7 +122,8 @@ export const TrackPlaySVGWrapper = styled.div`
   width: 18px;
   height: 17px;
   fill: transparent;
-  stroke: #4e4e4e;
+  ${'' /* stroke: #4e4e4e; */}
+  stroke: ${(props) => props.theme.svgDarkColor};
 `
 
 export const TrackPlayTitleText = styled.div``
@@ -132,7 +133,7 @@ export const TrackTitleLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.supportiveColor};
 `
 export const TrackTitleSpan = styled.span`
   font-style: normal;

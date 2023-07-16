@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
 
 const HoverMixin = css`
-    :hover,
-    :hover svg {
-        fill: transparent;
-        stroke: #acacac;
-        cursor: pointer;
-    }
+  :hover,
+  :hover svg {
+    fill: transparent;
+    stroke: #acacac;
+    cursor: pointer;
+  }
 `
 
 export const BarVolumeBlock = styled.div`
@@ -29,10 +29,23 @@ export const VolumeImage = styled.div`
   margin-right: 17px;
 `
 
+const SvgLight = css`
+    fill: transparent;
+    stroke: #696969;
+    stroke: ${(props) => props.theme.svgLightColor};
+`
+
+export const ToggleThemeSvg = styled.svg`
+  ${SvgLight}
+  width: 39px;
+  height: 39px;
+`
+
 export const VolumeSVG = styled.svg`
   width: 13px;
   height: 18px;
   fill: transparent;
+  stroke: ${SvgLight};
 `
 
 export const VolumeProgress = styled.div`
@@ -45,8 +58,13 @@ export const VolumeProgressLine = styled.input`
   height: 2px;
   margin-bottom: 12px;
   -webkit-appearance: none;
-  background: #797979;
-  background-image: linear-gradient(#ffffff, #ffffff);
+  ${'' /* background: #797979; */}
+  ${'' /* background-image: linear-gradient(#ffffff, #ffffff); */}
+  background: ${(props) => props.theme.volumeProgressColor.background};
+  background-image: linear-gradient(
+    ${(props) => props.theme.volumeProgressColor.thumb},
+    ${(props) => props.theme.volumeProgressColor.thumb}
+  );
   background-size: ${(props) => props.$range}% 100%;
   background-repeat: no-repeat;
 
@@ -55,7 +73,8 @@ export const VolumeProgressLine = styled.input`
     height: 12px;
     width: 12px;
     border-radius: 50%;
-    background: #ffffff;
+    ${'' /* background: #ffffff; */}
+    background: ${(props) => props.theme.volumeProgressColor.thumb};
     transition: background 0.3s ease-in-out;
   }
 
@@ -64,7 +83,8 @@ export const VolumeProgressLine = styled.input`
     height: 12px;
     width: 12px;
     border-radius: 50%;
-    background: #ffffff;
+    ${'' /* background: #ffffff; */}
+    background: ${(props) => props.theme.volumeProgressColor.thumb};
     transition: background 0.3s ease-in-out;
   }
 
@@ -73,20 +93,21 @@ export const VolumeProgressLine = styled.input`
     height: 12px;
     width: 12px;
     border-radius: 50%;
-    background: #ffffff;
+    ${'' /* background: #ffffff; */}
+    background: ${(props) => props.theme.volumeProgressColor.thumb};
     transition: background 0.3s ease-in-out;
   }
 
   ::-webkit-slider-thumb:hover {
-    background: #ffffff;
+    background: ${(props) => props.theme.volumeProgressColor.thumb};
   }
 
   ::-moz-range-thumb:hover {
-    background: #ffffff;
+    background: ${(props) => props.theme.volumeProgressColor.thumb};
   }
 
   ::-ms-thumb:hover {
-    background: #ffffff;
+    background: ${(props) => props.theme.volumeProgressColor.thumb};
   }
 
   ::-webkit-slider-runnable-track {

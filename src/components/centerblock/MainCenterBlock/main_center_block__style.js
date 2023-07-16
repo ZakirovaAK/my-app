@@ -6,7 +6,7 @@ export const MainCenterBlock = styled.div`
   -webkit-box-flex: 3;
   -ms-flex-positive: 3;
   flex-grow: 3;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.mainColor};
 `
 
 export const CenterBlockSearch = styled.div`
@@ -32,6 +32,7 @@ export const CenterBlockH2 = styled.h2`
   line-height: 72px;
   letter-spacing: -0.8px;
   margin-bottom: 45px;
+  color: ${(props) => props.theme.supportiveColor};
 `
 
 export const CenterBlockFilter = styled.div`
@@ -54,6 +55,7 @@ export const FilterTitle = styled.div`
   font-size: 16px;
   line-height: 24px;
   margin-right: 15px;
+  color: ${(props) => props.theme.supportiveColor};
 `
 
 

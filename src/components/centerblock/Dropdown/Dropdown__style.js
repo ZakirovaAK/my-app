@@ -5,7 +5,7 @@ const MainTextMixin = css`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) => props.theme.supportiveColor};
 `
 
 const HoverMixin = css`
@@ -21,7 +21,7 @@ export const Dropdown = styled.div`
     position: absolute;
     top: 49px;
     left: 0;
-    background-color: #313131;
+    background-color: ${(props) => props.theme.additionalColor};
     border-radius: 12px;
     padding-right: 34px;
 `
@@ -31,11 +31,11 @@ export const DropdownWrapper = styled.div`
     margin: 36.5px 0px 36.5px 34px;
     ::-webkit-scrollbar {
         width: 4px;
-        background: #4b4949;
+        background: ${(props) => props.theme.additionalColor};
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background-color: #ffffff;
+        background-color: ${(props) => props.theme.additionalColor};;
     }
 `
 export const DropdownContent = styled.div`
@@ -85,7 +85,7 @@ export const RadioLabel = styled.label`
 export const RadioBox = styled.div`
     height: 1.125rem;
     width: 1.125rem;
-    border: 1px solid #fff;
+    border: 1px solid ${(props) => props.theme.supportiveColor};
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@ export const RadioBox = styled.div`
         width: 100%;
         height: 100%;
         display: block;
-        background: #fff;
+        background: ${(props) => props.theme.supportiveColor};
         border-radius: 50%;
         cursor: pointer;
         transform: scale(0);
