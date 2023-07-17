@@ -5,6 +5,7 @@ import playlist03 from '../../img/playlist03.png'
 
 import * as Styled from './sidebar_block__style'
 import * as Skeleton from '../skeleton/skeleton__style'
+import { Link } from 'react-router-dom'
 // import SkeletonImage from '../../skeletons/skeleton-img'
 
 const SidebarListItem = ({ href, src, alt, isLoading }) => {
@@ -48,29 +49,36 @@ function SideBarBlock(props) {
         {status ? (
           <>
             {Array.from({ length: 3 }).map((i, index) => (
-              <Skeleton.SceletonSidebarItem  key={index} />
+              <Skeleton.SceletonSidebarItem key={index} />
             ))}
           </>
         ) : (
           <>
-          <SidebarListItem
-          href="/playlist/1"
-          src={playlist01}
-          alt="day's playlist"
-        />
-        <SidebarListItem
-          href="/playlist/2"
-          src={playlist02}
-          alt="100th hits"
-        />
-        <SidebarListItem
-          href="/playlist/3"
-          src={playlist03}
-          alt="Indi charge"
-        />
+            <Link to="/playlist/1">
+              <SidebarListItem
+                // href="/playlist/1"
+                src={playlist01}
+                alt="day's playlist"
+              />
+            </Link>
+
+            <Link to="/playlist/2">
+              <SidebarListItem
+                // href="/playlist/2"
+                src={playlist02}
+                alt="100th hits"
+              />
+            </Link>
+
+            <Link to="/playlist/3">
+              <SidebarListItem
+                // href="/playlist/3"
+                src={playlist03}
+                alt="Indi charge"
+              />
+            </Link>
           </>
         )}
-        
       </Styled.SidebarList>
     </Styled.SidebarBlock>
   )
