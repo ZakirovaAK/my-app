@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const TrackPlayImgWrapper = styled.div`
   width: 51px;
   height: 51px;
-  background-color: #313131;
+  ${'' /* background-color: #313131; */}
+  background-color: ${(props) => props.theme.additionalColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +15,7 @@ export const TrackPlayImgWrapper = styled.div`
 export const TrackImg = styled.div`
   width: 17px;
   height: 17px;
-  background-color: #313131;
+  background-color: ${(props) => props.theme.additionalColor};
 `
 
 export const TrackPlayAuthor = styled.div`
@@ -29,7 +30,7 @@ export const TrackPlayAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.supportiveColor};
   white-space: nowrap;
 `
 
@@ -45,7 +46,7 @@ export const TrackPlayAlbumLink = styled.a`
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.supportiveColor};
 `
 
 export const TrackPlayContain = styled.div`

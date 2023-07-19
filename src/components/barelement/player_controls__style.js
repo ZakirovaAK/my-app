@@ -5,7 +5,7 @@ const MainTextMixin = css`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) => props.theme.supportiveColor};
 `
 
 export const PlayerControls = styled.div`
@@ -89,6 +89,18 @@ export const PlayerBtnShuffle = styled(PlayerBtn)`
   -ms-flex-align: center;
   align-items: center;
 `
+const SvgLight = css`
+    fill: transparent;
+    stroke: #696969;
+    stroke: ${(props) => props.theme.svgLightColor};
+`
+
+
+export const ToggleThemeSvg = styled.svg`
+  ${SvgLight}
+  width: 39px;
+  height: 39px;
+`
 
 export const PlayerBtnShuffleSvg = styled.svg`
   width: 19px;
@@ -112,7 +124,7 @@ export const PlayerBtnSvg = styled.svg`
     ${'' /* ${HoverMixin} */}
     width: 15px;
     height: 14px;
-    stroke: #d9d9d9;
+    stroke: ${SvgLight};
 `
 
 export const BarPlayerText = styled.p`
@@ -127,6 +139,7 @@ export const BarPlayerProgress = styled.input`
     height: 5px;
     width: 100%;
     background: #797979;
+    background: ${(props) => props.theme.barProgressColor};
     background-image: linear-gradient(#b672ff, #b672ff);
     background-size: ${(props) => props.$range}% 100%;
     background-repeat: no-repeat;

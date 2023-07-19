@@ -10,7 +10,7 @@ export const SkeletonImage = styled(Skeleton)`
 `
 
 const SceletonMixin = css`
-    background-color: #313131;
+    ${(props) => props.theme.additionalColor};
     height: 19px;
 `
 

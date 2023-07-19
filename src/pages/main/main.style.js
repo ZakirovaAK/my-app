@@ -7,12 +7,11 @@ export const Main = styled.main`
     justify-content: space-between;
     padding-bottom: 60px;
 `;
-
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.additionalColor};
 `
 
 export const Container = styled.div`
@@ -20,6 +19,7 @@ export const Container = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   position: relative;
-  background-color: #181818;
+  ${'' /* background-color: #181818; */}
+  background-color: ${(props) => props.theme.mainColor};
   display: flex;
 `

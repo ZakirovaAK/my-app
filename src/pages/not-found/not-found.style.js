@@ -11,5 +11,5 @@ export const WrapperNotFound = styled.div`
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.mainColor};
 `

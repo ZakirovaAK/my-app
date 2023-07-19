@@ -21,7 +21,7 @@ export const SidebarList = styled.div`
   row-gap: 30px;
 `
 
-export const SidebarLink = styled.a`
+export const SidebarLink = styled.span`
   width: 100%;
   height: 100%;
 `
@@ -39,7 +39,7 @@ export const SidebarItem = styled.div`
   }
 `
 export const SidebarItemLoad = styled.div`
-    background-color: #313131;
+    background-color: ${(props) => props.theme.additionalColor};
 `
 
 export const SidebarImg = styled.img`

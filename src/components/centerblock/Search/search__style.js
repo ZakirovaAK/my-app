@@ -5,7 +5,7 @@ const MainTextMixin = css`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) => props.theme.supportiveColor};
 `
 
 export const CenterBlockSearch = styled.div`

@@ -5,7 +5,7 @@ const MainTextMixin = css`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${(props) => props.theme.supportiveColor};
 `
 
 const HoverMixin = css`
@@ -26,7 +26,7 @@ export const FilterItem = styled.div`
 export const FilterButton = styled.div`
     ${MainTextMixin}
     ${HoverMixin}
-    border: 1px solid #ffffff;
+    border: 1px solid ${(props) => props.theme.supportiveColor};
     border-radius: 60px;
     padding: 6px 20px;
 `
